@@ -20,6 +20,7 @@ class StringCalculator {
      * @throws {Error} - Throws an error if any negative numbers are present in the input string.
      */
     static add(numbers) {
+        this.callCount++;
         if (numbers === "") {
             return 0;
         }
@@ -30,6 +31,13 @@ class StringCalculator {
             .map(num => parseInt(num, 10))
             .filter(num => num <= 1000)
             .reduce((sum, num) => sum + num, 0);
+    }
+    /**
+     *
+     * @returns Return the number of times Add() was called
+     */
+    static GetCalledCount() {
+        return this.callCount;
     }
     /**
      * Extracts custom delimiters from the input string.
@@ -80,6 +88,7 @@ class StringCalculator {
         }
     }
 }
+StringCalculator.callCount = 0;
 /**
  * Example usage of the StringCalculator class demonstrating error handling.
  * This code attempts to add a string of numbers that includes a negative number.
@@ -102,14 +111,14 @@ catch (error) {
 /**
  * Below is the different example to test the results
  */
-console.log('Input - " "====', StringCalculator.add("")); // Expected Output: 0
-console.log('Input - "1"====', StringCalculator.add("1")); // Expected Output: 1
-console.log('Input - "1,5"====', StringCalculator.add("1,5")); // Expected Output: 6
-console.log('Input - "1\n2,3"====', StringCalculator.add("1\n2,3")); // Expected Output: 6
-console.log('Input - "//;\n1;2"====', StringCalculator.add("//;\n1;2")); // Expected Output: 3
-console.log('Input - "//|\n1|2|3"====', StringCalculator.add("//|\n1|2|3")); // Expected Output: 6
-console.log('Input - "//[**][%%]\n1**2%%3"====', StringCalculator.add("//[**][%%]\n1**2%%3")); // Expected Output: 6
-console.log('Input - "//[*][%]\n1*2%3"====', StringCalculator.add("//[*][%]\n1*2%3")); // Expected Output: 6
-console.log('Input - "//[***]\n1***2***3"====', StringCalculator.add("//[***]\n1***2***3")); // Expected Output: 6
-console.log('Input - "2,1001"====', StringCalculator.add("2,1001")); // Expected Output: 2
-console.log('Input - "//;\n1;1001;3"====', StringCalculator.add("//;\n1;1001;3")); // Expected Output: 4
+console.log('Input: " " OutPut: ', StringCalculator.add("")); // Expected Output: 0
+console.log('Input: "1" OutPut: ', StringCalculator.add("1")); // Expected Output: 1
+console.log('Input: "1,5" OutPut: ', StringCalculator.add("1,5")); // Expected Output: 6
+console.log('Input: "1\\n2,3" OutPut: ', StringCalculator.add("1\n2,3")); // Expected Output: 6
+console.log('Input: "//;\\n1;2" OutPut: ', StringCalculator.add("//;\n1;2")); // Expected Output: 3
+console.log('Input: "//|\\n1|2|3" OutPut: ', StringCalculator.add("//|\n1|2|3")); // Expected Output: 6
+console.log('Input: "//[**][%%]\\n1**2%%3" OutPut: ', StringCalculator.add("//[**][%%]\n1**2%%3")); // Expected Output: 6
+console.log('Input: "//[*][%]\\n1*2%3" OutPut: ', StringCalculator.add("//[*][%]\n1*2%3")); // Expected Output: 6
+console.log('Input: "//[***]\\n1***2***3" OutPut: ', StringCalculator.add("//[***]\n1***2***3")); // Expected Output: 6
+console.log('Input: "2,1001" OutPut: ', StringCalculator.add("2,1001")); // Expected Output: 2
+console.log('Input: "//;\\n1;1001;3" OutPut: ', StringCalculator.add("//;\n1;1001;3")); // Expected Output: 4
