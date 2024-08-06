@@ -1,7 +1,6 @@
 "use strict";
 /**
  * A utility class for performing string-based arithmetic calculations.
- *
  * The `StringCalculator` class provides a method to add numbers represented as
  * a string. The string can include:
  * - Standard comma (`,`) or newline (`\n`) as delimiters.
@@ -14,7 +13,6 @@ class StringCalculator {
      * commas, new lines, or custom delimiters specified in the first line of the string.
      * The method also checks for negative numbers and will throw an error if any are found.
      * Numbers greater than 1000 are ignored in the sum.
-     *
      * @param {string} numbers - The string containing the numbers to add, which may include:
      *                           - Comma (`,`) or newline (`\n`) separated values.
      *                           - A custom delimiter specified at the beginning of the string.
@@ -104,14 +102,14 @@ catch (error) {
 /**
  * Below is the different example to test the results
  */
-console.log('Input - " "', StringCalculator.add("")); // Expected Output: 0
-console.log('Input - "1"', StringCalculator.add("1")); // Expected Output: 1
-console.log('Input - "1,5"', StringCalculator.add("1,5")); // Expected Output: 6
-console.log('Input - "1\n2,3"', StringCalculator.add("1\n2,3")); // Expected Output: 6
-console.log('Input - "//;\n1;2"', StringCalculator.add("//;\n1;2")); // Expected Output: 3
-console.log('Input - "//|\n1|2|3"', StringCalculator.add("//|\n1|2|3")); // Expected Output: 6
-console.log('Input - "//[**][%%]\n1**2%%3"', StringCalculator.add("//[**][%%]\n1**2%%3")); // Expected Output: 6
-console.log('Input - "//[*][%]\n1*2%3"', StringCalculator.add("//[*][%]\n1*2%3")); // Expected Output: 6
-console.log('Input - "//[***]\n1***2***3"', StringCalculator.add("//[***]\n1***2***3")); // Expected Output: 6
-console.log('Input - "2,1001"', StringCalculator.add("2,1001")); // Expected Output: 2
-console.log('Input - "//;\n1;1001;3"', StringCalculator.add("//;\n1;1001;3")); // Expected Output: 4
+console.log('Input - " "====', StringCalculator.add("")); // Expected Output: 0
+console.log('Input - "1"====', StringCalculator.add("1")); // Expected Output: 1
+console.log('Input - "1,5"====', StringCalculator.add("1,5")); // Expected Output: 6
+console.log('Input - "1\n2,3"====', StringCalculator.add("1\n2,3")); // Expected Output: 6
+console.log('Input - "//;\n1;2"====', StringCalculator.add("//;\n1;2")); // Expected Output: 3
+console.log('Input - "//|\n1|2|3"====', StringCalculator.add("//|\n1|2|3")); // Expected Output: 6
+console.log('Input - "//[**][%%]\n1**2%%3"====', StringCalculator.add("//[**][%%]\n1**2%%3")); // Expected Output: 6
+console.log('Input - "//[*][%]\n1*2%3"====', StringCalculator.add("//[*][%]\n1*2%3")); // Expected Output: 6
+console.log('Input - "//[***]\n1***2***3"====', StringCalculator.add("//[***]\n1***2***3")); // Expected Output: 6
+console.log('Input - "2,1001"====', StringCalculator.add("2,1001")); // Expected Output: 2
+console.log('Input - "//;\n1;1001;3"====', StringCalculator.add("//;\n1;1001;3")); // Expected Output: 4
